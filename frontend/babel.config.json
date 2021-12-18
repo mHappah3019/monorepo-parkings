@@ -1,0 +1,17 @@
+{
+    "presets": [
+      [
+        "@babel/preset-react",
+        {
+          //TODO: capire perchè cazzo mi serve questo fottuto comando
+          //"pragma": "dom", //default pragma is React.createElement (only in classic runtime)
+          "pragmaFrag": "DomFrag", // default is React.Fragment (only in classic runtime)
+          "throwIfNamespace": false, // defaults to true
+          "runtime": "classic" // defaults to classic
+          // "importSource": "custom-jsx-library" // defaults to react (only in automatic runtime)
+        }
+      ]
+    ],
+    "plugins": ["@babel/plugin-proposal-class-properties"] //TODO: perchè l'abbiamo aggiunto???
+  }
+  
