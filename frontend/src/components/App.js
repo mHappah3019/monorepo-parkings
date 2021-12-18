@@ -8,10 +8,15 @@ import { List, ListItemText } from "@mui/material";
 import { ListItem } from "@mui/material";
 import { Divider } from "@mui/material";
 import { Container } from "@mui/material";
+import EmojiPeopleSharpIcon from '@mui/icons-material/EmojiPeopleSharp';
+import SchoolTwoToneIcon from '@mui/icons-material/SchoolTwoTone';
+import LocationOnSharpIcon from '@mui/icons-material/LocationOnSharp';
+import EmojiPeopleSharp from "@mui/icons-material/EmojiPeopleSharp";
 
 
 const mvpName = 'Rock-A-Ride'
-const problemDescription = 'Enough bike thefts (and tolerance towards these scums), owning a bike will make a comeback in the city where not owning a bike should feel like a sin'
+const problemDescription = 'Solving bicycle theft with a people-first approach'
+const problemDescription2 = 'Enough bike thefts (and tolerance towards these scums), owning a bike will make a comeback in the city where not owning a bike should feel like a sin'
 
 
 export default class App extends Component {
@@ -117,14 +122,14 @@ class ParkingsList extends React.Component {
         )
         return;
       }
-      if (parking.rating < securityLevel) {
+    /*   if (parking.rating < securityLevel) {
         unInterestingElements.push(
           <ParkingDiv
           parking={parking}
           key={parking.address} />
         )
         return;
-      }
+      } */
 
       elements.push(
         <ParkingDiv
@@ -170,7 +175,7 @@ class FilterBar extends React.Component {
           value={this.props.schoolFilter}
           onChange={this.handleSchoolFilterChange} 
         />
-        <label style={{paddingLeft:5}}>Rating:</label>
+        {/* <label style={{paddingLeft:5}}>Rating:</label>
         <select
           value={this.props.securityLevel}
           onChange={this.handleSecurityLevelChange}>
@@ -179,7 +184,7 @@ class FilterBar extends React.Component {
           <option value="3">3 or more</option>
           <option value="2">2 or more</option>
           <option value="1">1 or more</option>
-        </select>
+        </select> */}
       </form>
       </div>
     )
@@ -193,16 +198,16 @@ class ParkingDiv extends React.Component {
       <ListItem>
         <List>
           <ListItem disablePadding>
-            {parking.address}
+            <LocationOnSharpIcon/>
+            <p className='mildPadding'>{parking.address}</p>
           </ListItem>
           <ListItem disablePadding>
-            {parking.school}
+            <SchoolTwoToneIcon/>
+            <p className='mildPadding'>{parking.school}</p>
           </ListItem>
           <ListItem disablePadding>
-            {parking.rating}
-          </ListItem>
-          <ListItem disablePadding>
-            {parking.players}
+            <EmojiPeopleSharpIcon/>
+            <p className='mildPadding'>{parking.players}</p>
           </ListItem>
         </List>
       </ListItem>
@@ -238,8 +243,8 @@ class ProblemHeaders2 extends React.Component {
 
         <div className="content">
           <p>Find the most secure parking nearby your school:</p>
-          <p>1. Enter your school name</p>
-          <p>2. Filter by level of security and park with ease</p>
+          {/* <p>1. Enter your school name</p>
+          <p>2. Filter by level of security and park with ease</p> */}
         </div>
       </div>
     )

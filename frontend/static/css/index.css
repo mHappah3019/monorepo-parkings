@@ -86,6 +86,11 @@ div.mildPadding {
   padding: 5px;
 }
 
+p.mildPadding {
+  padding-left: 5px;
+  line-height: 0;
+}
+
 input {
   height: 30px;
   padding: 10px;
