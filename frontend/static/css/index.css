@@ -8,7 +8,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: lightblue;
+  /* background-color: lightblue; */
   font-family: verdana;
 }
 
@@ -47,14 +47,15 @@ footer {
 }
 
 .headerSubText {
-  width: 60%;
+  font-style:italic;
+  line-height: 0;
 }
 
 .container {
   border-radius: 10px;
   background-color: #f2f2f2;
   width: 100%;
-  border: solid lightblue 15px;
+  /* border: solid lightblue 15px; */
   padding: 10px;
 }
 
@@ -83,7 +84,7 @@ footer {
 }
 
 div.mildPadding {
-  padding: 5px;
+  padding: 10px;
 }
 
 p.mildPadding {

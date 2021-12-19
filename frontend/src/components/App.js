@@ -17,7 +17,11 @@ import EmojiPeopleSharp from "@mui/icons-material/EmojiPeopleSharp";
 const mvpName = 'Rock-A-Ride'
 const problemDescription = 'Solving bicycle theft with a people-first approach'
 const problemDescription2 = 'Enough bike thefts (and tolerance towards these scums), owning a bike will make a comeback in the city where not owning a bike should feel like a sin'
-
+const howTo = 'Le attività convenzionate sono locali o botteghe che mettono a disposizione le loro risorse per rendere i parcheggi di biciclette piu" sicuri'
+const howToE = "al suono dell'allarme i responsabili dell'attività interverrano chiamando le forze dell'ordine"
+const howto1= "La prima cosa da fare è (salutare, poi) avvertire che stiamo parcheggiando la nostra bicicletta"
+const howTo2 = "Successivamente potremmo parcheggiare la nostra bicicletta sapendo che un paio di occhi e di orecchie in piu' la stanno sorvegliando"
+const howTo3 = "Il miglior modo per rendere efficace questo patto è munirsi di un buon lucchetto con allarme"
 
 export default class App extends Component {
   constructor(props) { 
@@ -50,6 +54,7 @@ export default class App extends Component {
         <ProblemHeaders2
           mvp_name = {mvpName} 
           problem_description={problemDescription}/>
+        <UserGuide/>
         <FilterableParkingsList
           parkings = {this.state.parkings}/>
         <OutroParag2/>
@@ -222,9 +227,9 @@ class ProblemHeaders extends React.Component {
         <h1>
           {this.props.mvp_name}
         </h1>
-        <p>
+        <h1>
           {this.props.problem_description}
-        </p>
+        </h1>
       </div>
     )
   }
@@ -236,16 +241,40 @@ class ProblemHeaders2 extends React.Component {
       <div>
         <div className="header">
           <h1>Rock-A-<span className='headerPop'>Ride</span></h1>
-          <p className='headerSubText'>
+          <h5 className="headerSubText">
             {this.props.problem_description}
-          </p>
+          </h5>
         </div>
 
         <div className="content">
-          <p>Find the most secure parking nearby your school:</p>
+          <p></p>
           {/* <p>1. Enter your school name</p>
           <p>2. Filter by level of security and park with ease</p> */}
         </div>
+      </div>
+    )
+  }
+}
+
+class UserGuide extends React.Component {
+  constructor(props) {
+    super(props);
+    const whyItWorks = "'Le attività convenzionate sono locali o botteghe che mettono a disposizione le loro risorse umane per rendere i parcheggi di biciclette piu' sicuri. Al suono dell'allarme i responsabili interverranno chiamando le autorità";
+    const howItWorks1 = "Avverti che stai parcheggiando la tua bicicletta";
+    const howItWorks2 = "Parcheggi e allucchetti la tua bicicletta";
+    const howItWorks3 = "Il miglior modo per rendere efficace il sistema è munendosi di un buon lucchetto con allarme. Le attività possono quindi continuare a lavorare al solito ritmo senza dover attivamente sorvegliare nessuna bicicletta";
+  }
+  render() {
+    return (
+      <div>
+        <p>
+    
+        {this.whyItWorks}
+        {this.howItWorks1}
+        {this.howItWorks2}
+        {this.howItWorks3}
+
+        </p>
       </div>
     )
   }
@@ -277,7 +306,7 @@ class OutroParag2 extends React.Component {
   render() {
     return (
       <div className="container">
-        <div class="row">
+        <div className="row">
           <div className="column1">
             <div>
               <h2 id="nospacing">Contact Us</h2>
