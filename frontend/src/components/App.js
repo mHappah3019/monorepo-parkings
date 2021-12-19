@@ -54,6 +54,7 @@ export default class App extends Component {
         <ProblemHeaders2
           mvp_name = {mvpName} 
           problem_description={problemDescription}/>
+        <Description/>
         <UserGuide/>
         <FilterableParkingsList
           parkings = {this.state.parkings}/>
@@ -172,7 +173,7 @@ class FilterBar extends React.Component {
   render() {
     
     return (
-      <div className="mildPadding"> 
+      <div id="filterbar"> 
       <form>
         <input
           type="text" 
@@ -256,23 +257,43 @@ class ProblemHeaders2 extends React.Component {
   }
 }
 
+class Description extends React.Component {
+  render() {
+    const whyItWorks = "Le attività convenzionate sono locali o botteghe che mettono a disposizione le loro risorse umane per rendere i parcheggi di biciclette piu' sicuri. Al suono dell'allarme i responsabili interverranno chiamando le autorità";
+    return (
+      <div className="descriptionContent mildPadding mildSpacing">
+        <h2 className="clear">
+          What for
+        </h2>
+        <p>
+          {whyItWorks}
+        </p>
+      </div>
+
+    )
+  }
+  
+}
+
+
 class UserGuide extends React.Component {
   constructor(props) {
     super(props);
-    const whyItWorks = "'Le attività convenzionate sono locali o botteghe che mettono a disposizione le loro risorse umane per rendere i parcheggi di biciclette piu' sicuri. Al suono dell'allarme i responsabili interverranno chiamando le autorità";
-    const howItWorks1 = "Avverti che stai parcheggiando la tua bicicletta";
-    const howItWorks2 = "Parcheggi e allucchetti la tua bicicletta";
-    const howItWorks3 = "Il miglior modo per rendere efficace il sistema è munendosi di un buon lucchetto con allarme. Le attività possono quindi continuare a lavorare al solito ritmo senza dover attivamente sorvegliare nessuna bicicletta";
   }
   render() {
+    const howItWorks1 = "Avverti che stai parcheggiando la tua bicicletta.";
+    const howItWorks2 = "Parcheggi e allucchetti la tua bicicletta.";
+    const howItWorks3 = "Il miglior modo per rendere efficace il sistema è munendosi di un buon lucchetto con allarme. Le attività possono quindi continuare a lavorare al solito ritmo senza dover attivamente sorvegliare nessuna bicicletta.";
     return (
-      <div>
+      <div className="descriptionContent steps mildPadding mildSpacing">
+        <h3>
+          How
+        </h3>
         <p>
     
-        {this.whyItWorks}
-        {this.howItWorks1}
-        {this.howItWorks2}
-        {this.howItWorks3}
+          {howItWorks1}<br></br>
+          {howItWorks2}<br></br>
+          {howItWorks3}
 
         </p>
       </div>
