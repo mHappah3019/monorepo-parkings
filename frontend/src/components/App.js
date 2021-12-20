@@ -240,17 +240,15 @@ class ProblemHeaders2 extends React.Component {
   render() {
     return (
       <div>
-        <div className="header">
-          <h1>Rock-A-<span className='headerPop'>Ride</span></h1>
-          <h5 className="headerSubText">
-            {this.props.problem_description}
-          </h5>
-        </div>
-
-        <div className="content">
-          <p></p>
-          {/* <p>1. Enter your school name</p>
-          <p>2. Filter by level of security and park with ease</p> */}
+        <div className="row1" /* className="header row1 mildSpacing" */>
+          <div className="column left">
+            <h1 /* className="column left" */>Rock-A-<span className='headerPop'>Ride</span></h1>
+          </div> 
+          <div className="column right">
+            <h5 /* className="headerSubText column right" */>
+              {this.props.problem_description}
+            </h5>
+          </div>
         </div>
       </div>
     )
@@ -262,7 +260,7 @@ class Description extends React.Component {
     const whyItWorks = "Le attività convenzionate sono locali o botteghe che mettono a disposizione le loro risorse umane per rendere i parcheggi di biciclette piu' sicuri. Al suono dell'allarme i responsabili interverranno chiamando le autorità";
     return (
       <div className="descriptionContent mildPadding mildSpacing">
-        <h2 className="clear">
+        <h2 className="descriptionHeaders">
           What for
         </h2>
         <p>
@@ -286,7 +284,7 @@ class UserGuide extends React.Component {
     const howItWorks3 = "Il miglior modo per rendere efficace il sistema è munendosi di un buon lucchetto con allarme. Le attività possono quindi continuare a lavorare al solito ritmo senza dover attivamente sorvegliare nessuna bicicletta.";
     return (
       <div className="descriptionContent steps mildPadding mildSpacing">
-        <h3>
+        <h3 className="descriptionHeaders">
           How
         </h3>
         <p>
@@ -327,7 +325,7 @@ class OutroParag2 extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="row">
+        <div className="row2">
           <div className="column1">
             <div>
               <h2 id="nospacing">Contact Us</h2>
