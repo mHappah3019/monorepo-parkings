@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import HomePage from "./HomePage";
+//import HomePage from "./HomePage";
 import BasicTable from './Table';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
@@ -334,9 +334,6 @@ class OutroParag2 extends React.Component {
             <div className="content">
               <p>email inquires: surpriding.spaces@gmail.com</p>
             </div>
-          </div>
-          <div className="column2">
-            <p>“Sometimes good ideas spring from having a sense of where you want to go, of having a vision of the next level of products.” -Yvon Chouinard</p>
           </div>
         </div>
       </div>
