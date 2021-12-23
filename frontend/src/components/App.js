@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-import HomePage from "./HomePage";
-import BasicTable from './Table';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { List, ListItemText } from "@mui/material";
