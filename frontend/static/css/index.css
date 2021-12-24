@@ -164,6 +164,10 @@ select {
   line-height: 5px;
 }
 
+#InfoIcons{
+  padding-left: 25px;
+}
+
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 650px) {
   .column1, .column2 {

@@ -11,7 +11,13 @@ import { Container } from "@mui/material";
 import EmojiPeopleSharpIcon from '@mui/icons-material/EmojiPeopleSharp';
 import SchoolTwoToneIcon from '@mui/icons-material/SchoolTwoTone';
 import LocationOnSharpIcon from '@mui/icons-material/LocationOnSharp';
-import EmojiPeopleSharp from "@mui/icons-material/EmojiPeopleSharp";
+import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import Collapse from '@mui/material/Collapse';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
 
 
 const mvpName = 'Rock-A-Ride'
@@ -64,6 +70,54 @@ export default class App extends Component {
   }
 }
 
+class Legenda extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      open:true,
+    };
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+
+  handleClick() {
+    this.setState({
+      open: !(this.state.open)
+    });
+  }
+
+  render() {
+    return(
+      <div style={{background:"red"}}>
+
+        <ListItemButton onClick={this.handleClick}>
+        <ListItemText primary="Legenda" />
+        {this.state.open ? <ExpandLess /> : <ExpandMore />}
+        </ListItemButton>
+
+        <Collapse in={this.state.open} timeout="auto" unmountOnExit>
+        <List>
+        <ListItem>
+        <LocationOnSharpIcon/><ListItemText primary=": Where to park@" />
+        </ListItem>
+        <ListItem>
+        <SchoolTwoToneIcon/><ListItemText primary=":  Self-explanatory" />
+        </ListItem>
+        <ListItem>
+        <EmojiPeopleSharpIcon/><ListItemText primary=": Who's looking out for your bike" />
+        </ListItem>
+        <ListItem>
+        <VisibilityIcon/><ListItemText primary=": Surveillance efficency" />
+        </ListItem>
+        </List>
+        </Collapse>
+
+      </div>
+      
+    );
+  }
+}
+
 
 
 class FilterableParkingsList extends React.Component {
@@ -101,6 +155,7 @@ class FilterableParkingsList extends React.Component {
         onSchoolFilterChange={this.handleSchoolFilterChange}
         onSecurityLevelChange={this.handleSecurityLevelChange}
       />
+      <Legenda/>
       <ParkingsList 
         parkings={this.props.parkings}
         schoolFilter={this.state.schoolFilter}
@@ -118,13 +173,32 @@ class ParkingsList extends React.Component {
 
     const elements = [];
     const unInterestingElements = [];
+    let surveillance_color = "";
 
     this.props.parkings.forEach((parking) => {
+
+      switch(parking.surveillance_efficiency) {
+        case "RED":
+          surveillance_color = "error";
+          break;
+        case "YELLOW":
+          surveillance_color = "warning";
+          break;
+        case "GREEN":
+          surveillance_color = "success";
+          break;
+        default:
+          surveillance_color = "primary";
+          break;
+      }
+
       if (parking.school.toUpperCase().indexOf(schoolFilter.toUpperCase()) === -1){
         unInterestingElements.push(
           <ParkingDiv
           parking={parking}
-          key={parking.address} />
+          key={parking.address}
+          surveillance_color={surveillance_color}
+          />
         )
         return;
       }
@@ -140,7 +214,9 @@ class ParkingsList extends React.Component {
       elements.push(
         <ParkingDiv
           parking={parking}
-          key={parking.address} />
+          key={parking.address}
+          surveillance_color={surveillance_color}
+        />
       )
     });
 
@@ -199,7 +275,8 @@ class FilterBar extends React.Component {
 
 class ParkingDiv extends React.Component {
   render() {
-    const parking = this.props.parking
+    const parking = this.props.parking;
+    const surveillance_color = this.props.surveillance_color;
     return (
       <ListItem>
         <List>
@@ -215,6 +292,9 @@ class ParkingDiv extends React.Component {
             <EmojiPeopleSharpIcon/>
             <p className='mildPadding'>{parking.players}</p>
           </ListItem>
+          <div id='InfoIcons'>
+            <VisibilityIcon color={surveillance_color} fontSize='small'/>
+          </div>
         </List>
       </ListItem>
     )

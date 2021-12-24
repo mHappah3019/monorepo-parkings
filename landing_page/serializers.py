@@ -10,4 +10,4 @@ class LocalBusinessSerializer(serializers.ModelSerializer):
 class BikeRackSerializer(serializers.ModelSerializer):
     class Meta:
         model = BikeRack
-        fields = ('id', 'address', 'rating', 'school', 'players')
+        fields = ('id', 'address', 'rating', 'school', 'players', 'surveillance_efficiency')

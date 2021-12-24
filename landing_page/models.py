@@ -9,12 +9,18 @@ class LocalBusiness(models.Model):
     security = models.IntegerField(default="", unique=False) #TODO: https://stackoverflow.com/questions/33772947/django-set-range-for-integer-model-field-as-constraint
     proposed_by = models.CharField(max_length=50, unique=True)
 
+COLOR_CHOICES = [
+    ("GREEN", "GREEN"),
+    ("RED", "RED"),
+    ("YELLOW", "YELLOW"),
+]
 
 class BikeRack(models.Model):
     address = models.CharField(max_length=50, default="", unique=True)
     rating = models.IntegerField(default="", unique=False)
     school = models.CharField(max_length=50, default='', unique=False)
     players = models.CharField(max_length=50, default='', unique=False)
+    surveillance_efficiency = models.CharField(max_length=50, choices=COLOR_CHOICES, default="RED")
 
     def __str__(self) -> str:
         return self.address
