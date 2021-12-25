@@ -221,10 +221,12 @@ class ParkingsList extends React.Component {
     });
 
     return (
+      <div style={{background:'yellow', padding:"10px"}}>
       <List>
         {elements}
         {unInterestingElements}
       </List>
+      </div>
     );
   }
 }
@@ -252,6 +254,7 @@ class FilterBar extends React.Component {
       <div id="filterbar"> 
       <form>
         <input
+          id='schoolInput'
           type="text" 
           placeholder="Search by school..."
           value={this.props.schoolFilter}
@@ -278,9 +281,10 @@ class ParkingDiv extends React.Component {
     const parking = this.props.parking;
     const surveillance_color = this.props.surveillance_color;
     return (
+      <div style={{background:'white', margin:'5px'}}>
       <ListItem>
         <List>
-          <ListItem disablePadding>
+          <ListItem style={{background:'blue'}} disablePadding>
             <LocationOnSharpIcon/>
             <p className='mildPadding'>{parking.address}</p>
           </ListItem>
@@ -292,11 +296,12 @@ class ParkingDiv extends React.Component {
             <EmojiPeopleSharpIcon/>
             <p className='mildPadding'>{parking.players}</p>
           </ListItem>
-          <div id='InfoIcons'>
+          <div id='infoIcons'>
             <VisibilityIcon color={surveillance_color} fontSize='small'/>
           </div>
         </List>
       </ListItem>
+      </div>
     )
   }
 }
@@ -315,17 +320,17 @@ class ProblemHeaders extends React.Component {
     )
   }
 }
-
+//TODO: cambiare nome
 class ProblemHeaders2 extends React.Component {
   render() {
     return (
       <div>
-        <div className="row1" /* className="header row1 mildSpacing" */>
+        <div className="headers row1">
           <div className="column left">
-            <h1 /* className="column left" */>Rock-A-<span className='headerPop'>Ride</span></h1>
+            <h1 id="titleHeader">Rock-A-<span id='headerPop'>Ride</span></h1>
           </div> 
-          <div className="column right">
-            <h5 /* className="headerSubText column right" */>
+          <div className="column right" style={{padding:'0px'}}>
+            <h5>
               {this.props.problem_description}
             </h5>
           </div>
@@ -340,10 +345,10 @@ class Description extends React.Component {
     const whyItWorks = "Le attività convenzionate sono locali o botteghe che mettono a disposizione le loro risorse umane per rendere i parcheggi di biciclette piu' sicuri. Al suono dell'allarme i responsabili interverranno chiamando le autorità";
     return (
       <div className="descriptionContent mildPadding mildSpacing">
-        <h2 className="descriptionHeaders">
+        <h2 className="headers">
           What for
         </h2>
-        <p>
+        <p style={{background:'pink'}}>
           {whyItWorks}
         </p>
       </div>
@@ -364,10 +369,10 @@ class UserGuide extends React.Component {
     const howItWorks3 = "Il miglior modo per rendere efficace il sistema è munendosi di un buon lucchetto con allarme. Le attività possono quindi continuare a lavorare al solito ritmo senza dover attivamente sorvegliare nessuna bicicletta.";
     return (
       <div className="descriptionContent steps mildPadding mildSpacing">
-        <h3 className="descriptionHeaders">
+        <h3 className="headers">
           How
         </h3>
-        <p>
+        <p style={{background:'pink'}}>
     
           {howItWorks1}<br></br>
           {howItWorks2}<br></br>
@@ -408,7 +413,7 @@ class OutroParag2 extends React.Component {
         <div className="row2">
           <div className="column1">
             <div>
-              <h2 id="nospacing">Contact Us</h2>
+              <h2 style={{background:"red"}}>Contact Us</h2>
               <p>Leave any feedback or show interest in the project!<br></br> For having a talk too!!</p>
             </div>
             <div className="content">
