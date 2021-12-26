@@ -281,22 +281,23 @@ class ParkingDiv extends React.Component {
     const parking = this.props.parking;
     const surveillance_color = this.props.surveillance_color;
     return (
-      <div style={{background:'white', margin:'5px'}}>
+      <div style={{background:'white', margin:'5px'}}> {/* TODO: remove */}
+      {/* TODO: modificare p con ListText */}
       <ListItem>
-        <List>
-          <ListItem style={{background:'blue'}} disablePadding>
-            <LocationOnSharpIcon/>
-            <p className='mildPadding'>{parking.address}</p>
+        <List style={{background:'lightgreen'}}>
+          <ListItem disablePadding className='mildSpacing' style={{background:'red'}}>
+            <LocationOnSharpIcon style={{background:'yellow'}}/>
+            <p className='noSpacing' style={{background:'orange'}}/* className='mildPadding' */>{parking.address}</p>
           </ListItem>
-          <ListItem disablePadding>
+          <ListItem className='mildSpacing' disablePadding>
             <SchoolTwoToneIcon/>
-            <p className='mildPadding'>{parking.school}</p>
+            <p className='noSpacing'>{parking.school}</p>
           </ListItem>
-          <ListItem disablePadding>
+          <ListItem className='mildSpacing' disablePadding>
             <EmojiPeopleSharpIcon/>
-            <p className='mildPadding'>{parking.players}</p>
+            <p className='noSpacing'>{parking.players}</p>
           </ListItem>
-          <div id='infoIcons'>
+          <div className='mildSpacing' id='infoIcons'>
             <VisibilityIcon color={surveillance_color} fontSize='small'/>
           </div>
         </List>
@@ -325,12 +326,12 @@ class ProblemHeaders2 extends React.Component {
   render() {
     return (
       <div>
-        <div className="headers row1">
+        <div className="row">
           <div className="column left">
-            <h1 id="titleHeader">Rock-A-<span id='headerPop'>Ride</span></h1>
+            <h1 className="headers" id="titleHeader">Rock-A-<span id='headerPop'>Ride</span></h1>
           </div> 
           <div className="column right" style={{padding:'0px'}}>
-            <h5>
+            <h5 className="headers" >
               {this.props.problem_description}
             </h5>
           </div>
@@ -344,11 +345,11 @@ class Description extends React.Component {
   render() {
     const whyItWorks = "Le attività convenzionate sono locali o botteghe che mettono a disposizione le loro risorse umane per rendere i parcheggi di biciclette piu' sicuri. Al suono dell'allarme i responsabili interverranno chiamando le autorità";
     return (
-      <div className="descriptionContent mildPadding mildSpacing">
+      <div className="content leftPadding">
         <h2 className="headers">
           What for
         </h2>
-        <p style={{background:'pink'}}>
+        <p>
           {whyItWorks}
         </p>
       </div>
@@ -368,11 +369,11 @@ class UserGuide extends React.Component {
     const howItWorks2 = "Parcheggi e allucchetti la tua bicicletta.";
     const howItWorks3 = "Il miglior modo per rendere efficace il sistema è munendosi di un buon lucchetto con allarme. Le attività possono quindi continuare a lavorare al solito ritmo senza dover attivamente sorvegliare nessuna bicicletta.";
     return (
-      <div className="descriptionContent steps mildPadding mildSpacing">
+      <div className="content steps leftPadding">
         <h3 className="headers">
           How
         </h3>
-        <p style={{background:'pink'}}>
+        <p>
     
           {howItWorks1}<br></br>
           {howItWorks2}<br></br>
@@ -409,19 +410,15 @@ class OutroParag extends React.Component {
 class OutroParag2 extends React.Component {
   render() {
     return (
-      <div className="container">
-        <div className="row2">
-          <div className="column1">
-            <div>
-              <h2 style={{background:"red"}}>Contact Us</h2>
-              <p>Leave any feedback or show interest in the project!<br></br> For having a talk too!!</p>
-            </div>
+        <div className="row">
+          <div className="column left">
             <div className="content">
+              <h2 className="headers">Contact Us</h2>
+              <p>Leave any feedback or show interest in the project!<br></br> For having a talk too!!</p>
               <p>email inquires: surpriding.spaces@gmail.com</p>
             </div>
           </div>
         </div>
-      </div>
     )
   }
 }
