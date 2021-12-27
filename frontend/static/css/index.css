@@ -36,6 +36,20 @@ body {
   padding:0;
 }
 
+.updown {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.sides {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
 .mildPadding {
   padding:5px;
   margin:2px;
@@ -92,25 +106,47 @@ body {
 }
 
 
-#filterbar {
-  padding: 15px;
+#filterBar {
   margin-top: 25px;
+  padding-left: 25px;
   background: darkred;
 }
 
 #schoolInput {
+  text-align: center;
   height: 30px;
-  padding: 10px;
+  width: 150px;
+  /* padding: 10px; */
+  float: none;
+  display: block;
 }
 
 #infoIcons{
-  padding-left: 25px;
-  background: gray;
+  padding-left: 20px;
+}
+
+#legendaButton{
+  color: black;
+  border-bottom: 2px solid #e7e7e7;
+  height: 50px;
+  width: 120px;
+  margin-left: 35px;
 }
 
 /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 650px) {
-  .column1, .column2 {
+  .column {
     width: 100%;
+  }
+  #legendaButton{
+    margin: auto;
+  }
+  #schoolInput{
+    margin: auto;
+    float: none;
+    display: block;
+  }
+  #filterBar{
+    padding: 0;
   }
 }

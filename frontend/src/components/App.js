@@ -88,28 +88,28 @@ class Legenda extends React.Component{
 
   render() {
     return(
-      <div style={{background:"red"}}>
+      <div className="mildSpacing">
 
-        <ListItemButton onClick={this.handleClick}>
-        <ListItemText primary="Legenda" />
-        {this.state.open ? <ExpandLess /> : <ExpandMore />}
+        <ListItemButton id='legendaButton' onClick={this.handleClick}>
+          <ListItemText primary="Legenda" />
+          {this.state.open ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
 
         <Collapse in={this.state.open} timeout="auto" unmountOnExit>
-        <List>
-        <ListItem>
-        <LocationOnSharpIcon/><ListItemText primary=": Where to park@" />
-        </ListItem>
-        <ListItem>
-        <SchoolTwoToneIcon/><ListItemText primary=":  Self-explanatory" />
-        </ListItem>
-        <ListItem>
-        <EmojiPeopleSharpIcon/><ListItemText primary=": Who's looking out for your bike" />
-        </ListItem>
-        <ListItem>
-        <VisibilityIcon/><ListItemText primary=": Surveillance efficency" />
-        </ListItem>
-        </List>
+          <List>
+            <ListItem>
+            <LocationOnSharpIcon/><ListItemText primary=": Where to park@" />
+            </ListItem>
+            <ListItem>
+            <SchoolTwoToneIcon/><ListItemText primary=":  Self-explanatory" />
+            </ListItem>
+            <ListItem>
+            <EmojiPeopleSharpIcon/><ListItemText primary=": Who's looking out for your bike" />
+            </ListItem>
+            <ListItem>
+            <VisibilityIcon/><ListItemText primary=": Surveillance efficency" />
+            </ListItem>
+          </List>
         </Collapse>
 
       </div>
@@ -251,8 +251,8 @@ class FilterBar extends React.Component {
   render() {
     
     return (
-      <div id="filterbar"> 
-      <form>
+      <div> 
+      <form id="filterBar">
         <input
           id='schoolInput'
           type="text" 
@@ -282,20 +282,19 @@ class ParkingDiv extends React.Component {
     const surveillance_color = this.props.surveillance_color;
     return (
       <div style={{background:'white', margin:'5px'}}> {/* TODO: remove */}
-      {/* TODO: modificare p con ListText */}
       <ListItem>
         <List style={{background:'lightgreen'}}>
-          <ListItem disablePadding className='mildSpacing' style={{background:'red'}}>
+          <ListItem disablePadding className='mildSpacing updown' style={{background:'red'}}>
             <LocationOnSharpIcon style={{background:'yellow'}}/>
-            <p className='noSpacing' style={{background:'orange'}}/* className='mildPadding' */>{parking.address}</p>
+            <p className='mildSpacing sides'>{parking.address}</p>
           </ListItem>
-          <ListItem className='mildSpacing' disablePadding>
+          <ListItem className='mildSpacing updown' disablePadding>
             <SchoolTwoToneIcon/>
-            <p className='noSpacing'>{parking.school}</p>
+            <p className='mildSpacing sides'>{parking.school}</p>
           </ListItem>
-          <ListItem className='mildSpacing' disablePadding>
+          <ListItem className='mildSpacing updown' disablePadding>
             <EmojiPeopleSharpIcon/>
-            <p className='noSpacing'>{parking.players}</p>
+            <p className='mildSpacing sides'>{parking.players}</p>
           </ListItem>
           <div className='mildSpacing' id='infoIcons'>
             <VisibilityIcon color={surveillance_color} fontSize='small'/>
@@ -330,8 +329,8 @@ class ProblemHeaders2 extends React.Component {
           <div className="column left">
             <h1 className="headers" id="titleHeader">Rock-A-<span id='headerPop'>Ride</span></h1>
           </div> 
-          <div className="column right" style={{padding:'0px'}}>
-            <h5 className="headers" >
+          <div className="column right">
+            <h5 className="headers">
               {this.props.problem_description}
             </h5>
           </div>
