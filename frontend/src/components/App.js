@@ -74,7 +74,7 @@ class Legenda extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      open:true,
+      open:false,
     };
     this.handleClick = this.handleClick.bind(this)
   }
