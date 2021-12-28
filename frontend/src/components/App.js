@@ -330,7 +330,7 @@ class ProblemHeaders2 extends React.Component {
             <h1 className="headers" id="titleHeader">Rock-A-<span id='headerPop'>Ride</span></h1>
           </div> 
           <div className="column right">
-            <h5 className="headers">
+            <h5 id='subHeader' className="headers italic mildSpacing sides">
               {this.props.problem_description}
             </h5>
           </div>
