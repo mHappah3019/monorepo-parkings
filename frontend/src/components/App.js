@@ -104,7 +104,7 @@ class Legenda extends React.Component{
             <LocationOnSharpIcon/><ListItemText primary=": Where to park@" />
             </ListItem>
             <ListItem>
-            <SchoolTwoToneIcon/><ListItemText primary=":  Self-explanatory" />
+            <SchoolTwoToneIcon/><ListItemText primary=":  School/Campus" />
             </ListItem>
             <ListItem>
             <EmojiPeopleSharpIcon/><ListItemText primary=": Who's looking out for your bike" />
@@ -285,7 +285,7 @@ class ParkingDiv extends React.Component {
     const surveillance_color = this.props.surveillance_color;
     return (
       <div style={{background:'white', margin:'5px'}}> {/* TODO: remove */}
-      <ListItem>
+      <ListItem> {/* TODO:FIXX */}
         <List style={{background:'lightgreen'}}>
           <ListItem disablePadding className='mildSpacing updown' style={{background:'red'}}>
             <LocationOnSharpIcon style={{background:'yellow'}}/>
@@ -346,13 +346,15 @@ class ProblemHeaders2 extends React.Component {
 class Description extends React.Component {
   render() {
     const whyItWorks = "Le attività convenzionate sono locali o botteghe che mettono a disposizione le loro risorse umane per rendere i parcheggi di biciclette piu' sicuri. Al suono dell'allarme i responsabili interverranno chiamando le autorità";
+    const whyItWorksTraduzione = "Affiliated shops are either coffee bars or stores that will guarantee surveillance over the bike parkings nearby. When a alarmed bike-lock goes off, they will make sure your bike is safe. The shop staff can then keep working without much struggle, keeping their ears open will be enough."
     return (
       <div className="content leftPadding">
         <h2 className="headers">
           What for
         </h2>
         <p>
-          {whyItWorks}
+          {/* {whyItWorks} */}
+          {whyItWorksTraduzione}
         </p>
       </div>
 
@@ -370,6 +372,10 @@ class UserGuide extends React.Component {
     const howItWorks1 = "Avverti che stai parcheggiando la tua bicicletta.";
     const howItWorks2 = "Parcheggi e allucchetti la tua bicicletta.";
     const howItWorks3 = "Il miglior modo per rendere efficace il sistema è munendosi di un buon lucchetto con allarme. Le attività possono quindi continuare a lavorare al solito ritmo senza dover attivamente sorvegliare nessuna bicicletta.";
+    const howItWorks1Traduzione = "Inform the staff that you're parking your bike."
+    const howItWorks2Traduzione = "Park and lock your bike."
+    const howItWorks3Traduzione = "WARNING: An alarmed bike-lock is highly suggested as it's now the safest measure."
+
     return (
       <div className="content steps leftPadding">
         <h3 className="headers">
@@ -377,9 +383,12 @@ class UserGuide extends React.Component {
         </h3>
         <p>
     
-          {howItWorks1}<br></br>
+          {/* {howItWorks1}<br></br>
           {howItWorks2}<br></br>
-          {howItWorks3}
+          {howItWorks3} */}
+          {howItWorks1Traduzione}<br></br>
+          {howItWorks2Traduzione}<br></br>
+          {howItWorks3Traduzione}
 
         </p>
       </div>
@@ -415,9 +424,9 @@ class OutroParag2 extends React.Component {
         <div className="row">
           <div className="column left">
             <div className="content">
-              <h2 className="headers">Contact Us</h2>
-              <p>Leave any feedback or show interest in the project!<br></br> For having a talk too!!</p>
-              <p>email inquires: surpriding.spaces@gmail.com</p>
+              <h2 className="headers">Contacts</h2>
+              <p>Leave any feedback or show interest in the project!<br></br> For having a talk too!</p>
+              <p>email: spaziperpedalare@gmail.com</p>
             </div>
           </div>
         </div>
