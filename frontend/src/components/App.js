@@ -54,6 +54,9 @@ export default class App extends Component {
 
   render() {
 
+    const mainProps = { // make sure all required component's inputs/Props keys&types match
+      parkings: this.state.parkings
+    }
     return(
       //TODO: keep an eye on versions/numbers
       <div>
@@ -63,7 +66,7 @@ export default class App extends Component {
         <Description/>
         <UserGuide/>
         <FilterableParkingsList
-          parkings = {this.state.parkings}/>
+        {...mainProps}/>
         <OutroParag2/>
       </div>
     );
@@ -127,9 +130,9 @@ class FilterableParkingsList extends React.Component {
       schoolFilter: '',
       securityLevel: 1
     };
-    this.props = {
+    /* this.props = {
       divSize: 0
-    };
+    }; */
 
     this.handleSchoolFilterChange = this.handleSchoolFilterChange.bind(this);
     this.handleSecurityLevelChange = this.handleSecurityLevelChange.bind(this);
